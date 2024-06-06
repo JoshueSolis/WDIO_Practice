@@ -54,17 +54,17 @@ exports.config = {
         maxInstances: 2,
         browserName: 'chrome',
         'goog:chromeOptions' : {
-            args: [/*'--headless',*/ '--disable-gpu', '--window-size=1920,1080', '--incognito']
+            args: ['--headless', '--disable-gpu', '--window-size=1920,1080', '--incognito']
         },
         acceptInsecureCerts: true
-    }/*, {
+    }, {
         maxInstances: 2,
         browserName: 'firefox',
         'moz:firefoxOptions':{
-            args: ['headless']
+            args: ['--headless']
         },
         acceptInsecureCerts: true
-    }*/],
+    }],
     afterTest: async (test, context, {error, result, duration, passed, retries }) => {
         await browser.reloadSession();
     },
