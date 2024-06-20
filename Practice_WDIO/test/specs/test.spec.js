@@ -1,21 +1,19 @@
-const { expect } = require('chai');
-
 describe("Trello Test - Suite", () => {
-    before( () => {
-        browser.url('https://trello.com/login');
-        $('#username').waitForDisplayed();
-
+    before(async () => {
+        await browser.url('https://trello.com/login')
+        await $('#username').waitForDisplayed();
+ 
         const emailInput = $('#username');
         const loginButton = $('#login-submit');
-
-        emailInput.setValue('test.trello0624@outlook.com');
-        loginButton.click();
-        
-        $('#password').waitForDisplayed();
+ 
+        await emailInput.setValue('test.trello0624@outlook.com');
+        await loginButton.click();
+       
+        await $('#password').waitForDisplayed();
         const passwordInput = $('#password');
-
-        passwordInput.setValue('password0624');
-        loginButton.click();
+ 
+        await passwordInput.setValue('password0624');
+        await loginButton.click();
     });
     it('should send an error when a user tries to change their username to an existing username', async () => {
         
