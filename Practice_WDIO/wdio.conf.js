@@ -54,7 +54,7 @@ exports.config = {
         maxInstances: 2,
         browserName: 'chrome',
         'goog:chromeOptions' : {
-            args: [ '--disable-gpu', '--window-size=1920,1080', '--incognito']
+            args: ['--headless', '--disable-gpu', '--window-size=1920,1080', '--incognito']
         },
         acceptInsecureCerts: true
     }/*, {
