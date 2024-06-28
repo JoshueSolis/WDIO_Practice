@@ -22,7 +22,7 @@ exports.config = {
     //
     specs: [
         // ToDo: define location for spec files here
-        './test/specs/**/*.js'
+        './../test/specs/**/*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -54,7 +54,7 @@ exports.config = {
         maxInstances: 2,
         browserName: 'chrome',
         'goog:chromeOptions' : {
-            args: ['--headless', '--disable-gpu', '--window-size=1920,1080', '--incognito']
+            args: ['--disable-gpu', '--window-size=1920,1080', '--incognito']
         },
         acceptInsecureCerts: true
     }/*, {
