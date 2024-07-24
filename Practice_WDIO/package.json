@@ -4,7 +4,7 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "clean": "rimraf ./allure-report ./allure-results",
+    "clean": "rimraf ./allure-report ./target/allure-results",
     "test": "wdio run src/config/wdio.conf.js"
   },
   "keywords": [],
