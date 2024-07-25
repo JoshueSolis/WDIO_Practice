@@ -1,4 +1,4 @@
-const boardList = require("./../components/common/boardSelectionList.component");
+const boardList = require('./../components/common/boardSelectionList.component');
 
 class dashboardPage {
   constructor() {

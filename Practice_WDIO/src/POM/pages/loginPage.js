@@ -1,12 +1,12 @@
 const loginComponents = require('./../components/login/login.components');
 
 class loginPage {
-  constructor(){
+  constructor() {
     this.LoginComponents = new loginComponents();
   }
 
   async open() {
-    await browser.url("https://trello.com/login");
+    await browser.url('https://trello.com/login');
   }
 
   async login(email, password) {

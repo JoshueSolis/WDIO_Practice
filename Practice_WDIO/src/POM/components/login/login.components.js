@@ -1,14 +1,14 @@
 class loginComponents {
   get emailInput() {
-    return $("#username");
+    return $('#username');
   }
 
   get loginButton() {
-    return $("#login-submit");
+    return $('#login-submit');
   }
 
   get passwordInput() {
-    return $("#password");
+    return $('#password');
   }
 
   get avatarButton() {

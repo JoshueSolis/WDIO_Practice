@@ -8,7 +8,7 @@ class boardComponents {
   }
 
   get listNameInput() {
-    return $("textarea:focus-visible");
+    return $('textarea:focus-visible');
   }
 
   get saveListButton() {
@@ -45,13 +45,13 @@ class boardComponents {
 
   get closeMemberSelector() {
     return $('a[data-testid="popover-close"]');
-  } 
-  
-  get closeCardEditor (){
+  }
+
+  get closeCardEditor() {
     return $('span[data-testid="CloseIcon"]');
   }
 
-  get memberButtonIndicator (){
+  get memberButtonIndicator() {
     return $('button[data-testid="card-front-member"]');
   }
 

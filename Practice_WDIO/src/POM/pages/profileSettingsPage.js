@@ -1,7 +1,7 @@
 const profileComponents = require('./../components/profileComponents/profileSettingsComponents');
 
 class profileSettingsPage {
-  constructor(){
+  constructor() {
     this.ProfileComponents = new profileComponents();
   }
 
