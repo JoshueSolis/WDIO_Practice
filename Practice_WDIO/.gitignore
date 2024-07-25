@@ -1,3 +1,6 @@
+# node_modules
 node_modules
+
+# allure results and reports
 allure-results
 allure-report

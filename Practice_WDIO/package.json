@@ -4,6 +4,7 @@
   "private": true,
   "main": "index.js",
   "scripts": {
+    "clean": "rimraf ./allure-report ./target/allure-results",
     "test": "wdio run src/config/wdio.conf.js"
   },
   "keywords": [],
@@ -18,6 +19,7 @@
     "@wdio/spec-reporter": "^8.38.0",
     "@wdio/visual-service": "^4.1.3",
     "chromedriver": "^125.0.3",
+    "rimraf": "^6.0.1",
     "wdio-chromedriver-service": "^8.1.1",
     "wdio-geckodriver-service": "^5.0.2"
   },
