@@ -9,6 +9,14 @@ export default [
       sourceType: 'module',
       globals: {
         ...globals.node,
+        $: 'readonly',
+        $$: 'readonly',
+        browser: 'readonly',
+        it: 'readonly',
+        expect: 'readonly',
+        describe: 'readonly',
+        before: 'readonly',
+        beforeEach: 'readonly',
       },
     },
     rules: {
@@ -17,5 +25,6 @@ export default [
       'no-var': 'error',
       'prefer-const': 'error',
     },
+    ignores: ['wdio.conf.js'],
   },
 ];

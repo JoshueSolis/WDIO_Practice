@@ -67,7 +67,8 @@ exports.config = {
         acceptInsecureCerts: true
     }*/,
   ],
-  afterTest: async (test, context, { error, result, duration, passed, retries }) => {
+  // test, context, { error, result, duration, passed, retries }
+  afterTest: async () => {
     await browser.reloadSession();
   },
   //
@@ -173,7 +174,7 @@ exports.config = {
    * @param {object} config wdio configuration object
    * @param {Array.<Object>} capabilities list of capabilities details
    */
-  onPrepare: function (config, capabilities) {},
+  onPrepare: function () {},
   /**
    * Gets executed before a worker process is spawned and can be used to initialize specific service
    * for that worker as well as modify runtime environments in an async fashion.
@@ -211,7 +212,7 @@ exports.config = {
    * @param {Array.<String>} specs        List of spec file paths that are to be run
    * @param {object}         browser      instance of created browser/device session
    */
-  before: async function (config, capabilities) {
+  before: async function () {
     const chai = await import('chai');
     global.expect = chai.expect;
   },
