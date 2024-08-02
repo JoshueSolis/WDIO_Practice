@@ -1,4 +1,4 @@
-const boardComponents = require("./../components/board/board.components");
+const boardComponents = require('./../components/board/board.components');
 
 class boardPage {
   constructor() {
@@ -18,7 +18,7 @@ class boardPage {
   async isListDisplayed() {
     return this.BoardComponents.listName.waitForDisplayed({ timeout: 10000 });
   }
-  
+
   async getListName() {
     return this.BoardComponents.listName.getText();
   }
@@ -30,7 +30,7 @@ class boardPage {
   }
 
   async isCardDisplayed() {
-    return this.BoardComponents.cardName.waitForDisplayed({ timeout:10000 });
+    return this.BoardComponents.cardName.waitForDisplayed({ timeout: 10000 });
   }
 
   async getCardName() {
@@ -49,7 +49,7 @@ class boardPage {
   }
 
   async isMemberAssignedToCard() {
-    return this.BoardComponents.memberButtonIndicator.waitForDisplayed({ timeout:10000 });
+    return this.BoardComponents.memberButtonIndicator.waitForDisplayed({ timeout: 10000 });
   }
 
   async openFilters() {
