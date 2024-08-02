@@ -13,7 +13,7 @@ export default [
       sourceType: 'module',
       globals: {
         ...globals.node,
-        ...globals.mocha
+        ...globals.mocha,
       },
     },
     rules: {
@@ -21,6 +21,6 @@ export default [
       'no-multiple-empty-lines': 'warn',
       'no-var': 'error',
       'prefer-const': 'error',
-    }
+    },
   },
 ];

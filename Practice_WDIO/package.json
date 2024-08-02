@@ -7,7 +7,13 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "clean": "rimraf ./allure-report ./target/allure-results",
-    "test": "wdio run src/config/wdio.conf.js"
+    "test": "wdio run src/config/wdio.conf.js",
+    "test:smoke": "wdio run src/config/wdio.conf.js --cucumberOpts.tagExpression='@smoke'",
+    "test:login": "wdio run src/config/wdio.conf.js --cucumberOpts.tagExpression='@login'",
+    "test:profile": "wdio run src/config/wdio.conf.js --cucumberOpts.tagExpression='@profile'",
+    "test:board": "wdio run src/config/wdio.conf.js --cucumberOpts.tagExpression='@board'",
+    "test:card": "wdio run src/config/wdio.conf.js --cucumberOpts.tagExpression='@card'",
+    "test:filter": "wdio run src/config/wdio.conf.js --cucumberOpts.tagExpression='@filter'"
   },
   "keywords": [],
   "author": "",
@@ -30,6 +36,7 @@
     "wdio-geckodriver-service": "^5.0.2"
   },
   "dependencies": {
+    "@wdio/cucumber-framework": "^8.39.0",
     "chai": "^5.1.1"
   }
 }
