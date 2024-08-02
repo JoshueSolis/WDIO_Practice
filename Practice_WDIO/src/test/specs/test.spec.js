@@ -9,20 +9,20 @@ const dashboardPage = new DashboardPage();
 const BoardPage = require('./../../POM/pages/boardPage');
 const boardPage = new BoardPage();
 
-describe('Trello Test - Suite', function() {
-  before(async function() {});
+describe('Trello Test - Suite', function () {
+  before(async function () {});
 
-  beforeEach(async function() {
+  beforeEach(async function () {
     await loginPage.open();
     await loginPage.login('test.trello0624@outlook.com', 'password0624');
   });
 
-  it('should allow a user to log in successfully with valid credentials', async function() {
+  it('should allow a user to log in successfully with valid credentials', async function () {
     const isDisplayed = await loginPage.isAvatarButtonDisplayed();
     expect(isDisplayed).to.be.true;
   });
 
-  it('should allow a user to change their username', async function() {
+  it('should allow a user to change their username', async function () {
     await navBarHeader.openProfile();
     await navBarHeader.openSettingsAccount();
     await profileSettingsPage.changeUserName('newtestuser060624');
@@ -32,7 +32,7 @@ describe('Trello Test - Suite', function() {
     expect(isDisplayed).to.be.true;
   });
 
-  it('should send an error when a user tries to change their username to an existing username', async function() {
+  it('should send an error when a user tries to change their username to an existing username', async function () {
     await navBarHeader.openProfile();
     await navBarHeader.openSettingsAccount();
     await profileSettingsPage.changeUserName('newusername');
@@ -44,7 +44,7 @@ describe('Trello Test - Suite', function() {
     expect(errorMessage).to.equal('Username is taken');
   });
 
-  it('should allow a user to create a new board', async function() {
+  it('should allow a user to create a new board', async function () {
     await dashboardPage.openCreateBoardModal();
     await dashboardPage.createBoard('Board 1');
 
@@ -55,7 +55,7 @@ describe('Trello Test - Suite', function() {
     expect(boardName).to.include('Board 1');
   });
 
-  it('should allow a user to create a new list in a board', async function() {
+  it('should allow a user to create a new list in a board', async function () {
     await boardPage.openBoard();
     const isBoardDisplayed = await dashboardPage.isBoardHeaderDisplayed();
     expect(isBoardDisplayed).to.be.true;
@@ -68,7 +68,7 @@ describe('Trello Test - Suite', function() {
     expect(listName).to.include('New List');
   });
 
-  it('should allow a user to create a new card in a list', async function() {
+  it('should allow a user to create a new card in a list', async function () {
     await boardPage.openBoard();
     const isBoardDisplayed = await dashboardPage.isBoardHeaderDisplayed();
     expect(isBoardDisplayed).to.be.true;
@@ -81,7 +81,7 @@ describe('Trello Test - Suite', function() {
     expect(cardName).to.equal('New Card');
   });
 
-  it('should allow a user to assign a member to a card', async function() {
+  it('should allow a user to assign a member to a card', async function () {
     await boardPage.openBoard();
     const isBoardDisplayed = await dashboardPage.isBoardHeaderDisplayed();
     expect(isBoardDisplayed).to.be.true;
@@ -96,7 +96,7 @@ describe('Trello Test - Suite', function() {
     expect(isMemberAssignedToCard).to.be.true;
   });
 
-  it('should allow a user to filter cards by assigned user', async function() {
+  it('should allow a user to filter cards by assigned user', async function () {
     await boardPage.openBoard();
     const isBoardDisplayed = await dashboardPage.isBoardHeaderDisplayed();
     expect(isBoardDisplayed).to.be.true;

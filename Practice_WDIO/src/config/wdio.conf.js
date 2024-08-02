@@ -1,9 +1,4 @@
 exports.config = {
-  //
-  // ====================
-  // Runner Configuration
-  // ====================
-  // WebdriverIO supports running e2e tests as well as unit and component tests.
   runner: 'local',
   //
   // ==================
@@ -22,7 +17,7 @@ exports.config = {
   //
   specs: [
     // ToDo: define location for spec files here
-    './../test/specs/**/*.js',
+    './../test/features/**/*.feature',
   ],
   // Patterns to exclude.
   exclude: [
@@ -68,7 +63,7 @@ exports.config = {
     }*/,
   ],
   // test, context, { error, result, duration, passed, retries }
-  afterTest: async () => {
+  afterScenario: async () => {
     await browser.reloadSession();
   },
   //
@@ -126,7 +121,7 @@ exports.config = {
   //
   // Make sure you have the wdio adapter package for the specific framework installed
   // before running any tests.
-  framework: 'mocha',
+  framework: 'cucumber',
 
   //
   // The number of times to retry the entire specfile when it fails as a whole
@@ -156,9 +151,21 @@ exports.config = {
 
   // Options to be passed to Mocha.
   // See the full list at http://mochajs.org/
-  mochaOpts: {
-    ui: 'bdd',
+  cucumberOpts: {
+    require: ['./src/test/steps/**/*.js'],
+    backtrace: false,
+    requireModule: [],
+    dryRun: false,
+    failFast: false,
+    format: ['pretty'],
+    colors: true,
+    snippets: true,
+    source: true,
+    profile: [],
+    strict: false,
+    tagExpression: '',
     timeout: 60000,
+    ignoreUndefinedDefinitions: false,
   },
 
   //
